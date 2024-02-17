@@ -1,0 +1,34 @@
+<?php
+// Text
+$_['text_subject']               ='%s - Suscripción %s';
+$_['text_greeting']              ='Gracias por su interés en el producto %s. Su solicitud de suscripción ha sido recibida y será procesada una vez que se haya confirmado el pago.';
+$_['text_link']                  ='Para ver su suscripción, haga clic en el siguiente enlace:';
+$_['text_promotion']             ='Éxito: ¡Se ha agregado exitosamente una función promocional con esta suscripción!';
+$_['text_subscription_trial']    ='%s cada %d %s(s) para %d pago(s) entonces ';
+$_['text_subscription_duration'] ='%s cada %d %s(s) para %d pago(s)';
+$_['text_subscription_cancel']   ='%s cada %d %s(s) hasta que se cancele';
+$_['text_subscription_detail']   ='Detalles de la suscripción';
+$_['text_instruction']           ='Instrucciones';
+$_['text_orders_id']             ='Solicitar ID:';
+$_['text_date_added']            ='Fecha Agregada:';
+$_['text_order_status']          ='Estado del pedido:';
+$_['text_payment_method']        ='Método de pago:';
+$_['text_payment_address']       ='Dirección de Pago';
+$_['text_email']                 ='Correo electrónico:';
+$_['text_telephone']             ='Teléfono:';
+$_['text_ip']                    ='Dirección IP:';
+$_['text_products']              ='Productos';
+$_['text_product']               ='Producto';
+$_['text_model']                 ='Modelo';
+$_['text_quantity']              ='Cantidad';
+$_['text_price']                 ='Precio';
+$_['text_order_total']           ='Totales de pedidos';
+$_['text_total']                 ='Total';
+$_['text_comment']               ='Los comentarios para tu suscripción son:';
+$_['text_description']           ='Descripción';
+$_['text_day']                   ='día';
+$_['text_week']                  ='semana';
+$_['text_semi_month']            ='mitad de mes';
+$_['text_month']                 ='mes';
+$_['text_year']                  ='año';
+$_['text_footer']                ='Por favor responda a este correo electrónico si tiene alguna pregunta.';
