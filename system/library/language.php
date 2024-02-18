@@ -32,6 +32,8 @@ class Language {
 	 */
 	protected array $cache = [];
 
+    private object $config;
+
 	/**
 	 * Constructor
 	 *
@@ -131,11 +133,11 @@ class Language {
             $array_languajes=explode(";", $acepted_languajes);
 
             if (preg_match("/es/i", $array_languajes[0])){
-                // $code = "es-es";
+                $code = "es-es";
                 $this->config->set('config_language_id', 2);
                 $this->config->set('config_language','es-es');
             }else{
-                //$code = "en-gb";
+                $code = "en-gb";
                 $this->config->set('config_language_id', 1);
                 $this->config->set('config_language','en-gb');
             }

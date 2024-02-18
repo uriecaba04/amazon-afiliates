@@ -11,6 +11,9 @@ class Information extends \Opencart\System\Engine\Controller {
 	 */
 	public function index(): object|null {
 		$this->load->language('information/information');
+        if (isset($this->request->get['information_id']) && $this->request->get['information_id']==5) {
+            header('Location: https://www.miraelfaro.com/blog/');
+        }
 
 		if (isset($this->request->get['information_id'])) {
 			$information_id = (int)$this->request->get['information_id'];
