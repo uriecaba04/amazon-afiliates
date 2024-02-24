@@ -112,6 +112,9 @@ class Mail {
             echo "Se envia a:  ".$to."/n";
             echo "subject:  ".$this->option['subject']."/n";
             echo "header:  ".$message."/n";
+            $header = 'From: webmaster@example.com' . "\r\n" .
+                'Reply-To: webmaster@example.com' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
             mail($to, $this->option['subject'], $message, $header);
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
         }
