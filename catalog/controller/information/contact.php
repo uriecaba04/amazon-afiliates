@@ -142,7 +142,9 @@ class Contact extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
+            echo "Proceso A";
 			if ($this->config->get('config_mail_engine')) {
+                echo "Proceso B";
 				$mail_option = [
 					'parameter'     => $this->config->get('config_mail_parameter'),
 					'smtp_hostname' => $this->config->get('config_mail_smtp_hostname'),
@@ -161,6 +163,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 				$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
 				$mail->setText($this->request->post['enquiry']);
 				$mail->send();
+                echo "eNVIO CORREO B";
 			}
 
 			//$json['redirect'] = $this->url->link('information/contact.success', 'language=' . $this->config->get('config_language'), true);
