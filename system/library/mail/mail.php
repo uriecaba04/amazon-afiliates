@@ -102,7 +102,7 @@ class Mail {
 		$message .= '--' . $boundary . '--' . $eol;
 
 		ini_set('sendmail_from', $this->option['from']);
-
+        echo "Ejecuta  clase mail  H";
 		if (!empty($this->option['parameter'])) {
             echo "Ejecuta  clase mail A";
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header, $this->option['parameter']);
