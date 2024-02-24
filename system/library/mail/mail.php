@@ -24,13 +24,13 @@ class Mail {
 	 */
 	public function send(): bool {
 
-        echo "Ejecuta  clase mail C";
+
 		if (is_array($this->option['to'])) {
 			$to = implode(',', $this->option['to']);
 		} else {
 			$to = $this->option['to'];
 		}
-        echo "Ejecuta  clase mail D";
+
 		if (version_compare(phpversion(), '8.0', '>=') || substr(PHP_OS, 0, 3) == 'WIN') {
 			$eol = "\r\n";
 		} else {
@@ -42,7 +42,7 @@ class Mail {
 		$header  = 'MIME-Version: 1.0' . $eol;
 		$header .= 'Date: ' . date('D, d M Y H:i:s O') . $eol;
 		$header .= 'From: =?UTF-8?B?' . base64_encode($this->option['sender']) . '?= <' . $this->option['from'] . '>' . $eol;
-        echo "Ejecuta  clase mail E";
+       
 		if (empty($this->option['reply_to'])) {
 			$header .= 'Reply-To: =?UTF-8?B?' . base64_encode($this->option['sender']) . '?= <' . $this->option['from'] . '>' . $eol;
 		} else {
@@ -55,7 +55,7 @@ class Mail {
 
 		$message = '--' . $boundary . $eol;
 
-        echo "Ejecuta  clase mail F";
+
 		if (empty($this->option['html'])) {
 			$message .= 'Content-Type: text/plain; charset="utf-8"' . $eol;
 			$message .= 'Content-Transfer-Encoding: base64' . $eol . $eol;
@@ -98,25 +98,16 @@ class Mail {
 				}
 			}
 		}
-        echo "Ejecuta  clase mail G";
+
 		$message .= '--' . $boundary . '--' . $eol;
 
 		ini_set('sendmail_from', $this->option['from']);
-        echo "Ejecuta  clase mail  H";
+
 		if (!empty($this->option['parameter'])) {
-            echo "Ejecuta  clase mail A";
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header, $this->option['parameter']);
 		} else {
-            echo "Ejecuta  clase mail B";
-
-            echo "Se envia a:  ".$to."/n";
-            echo "subject:  ".$this->option['subject']."/n";
-            echo "header:  ".$message."/n";
-            $header = 'From: webmaster@example.com' . "\r\n" .
-                'Reply-To: webmaster@example.com' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-            mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']." ".$this->option['reply_to']) . '?=', $this->option['text']);
-			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
+            return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']." ".$this->option['reply_to']) . '?=', $this->option['text']);
+			//return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
         }
 	}
 }
