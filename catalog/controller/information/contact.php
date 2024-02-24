@@ -163,7 +163,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 				$mail->send();
 			}
 
-			$json['redirect'] = $this->url->link('information/contact.success', 'language=' . $this->config->get('config_language'), true);
+			//$json['redirect'] = $this->url->link('information/contact.success', 'language=' . $this->config->get('config_language'), true);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
