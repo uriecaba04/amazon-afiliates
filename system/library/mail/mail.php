@@ -30,7 +30,7 @@ class Mail {
 		} else {
 			$to = $this->option['to'];
 		}
-
+        echo "Ejecuta  clase mail D";
 		if (version_compare(phpversion(), '8.0', '>=') || substr(PHP_OS, 0, 3) == 'WIN') {
 			$eol = "\r\n";
 		} else {
@@ -42,7 +42,7 @@ class Mail {
 		$header  = 'MIME-Version: 1.0' . $eol;
 		$header .= 'Date: ' . date('D, d M Y H:i:s O') . $eol;
 		$header .= 'From: =?UTF-8?B?' . base64_encode($this->option['sender']) . '?= <' . $this->option['from'] . '>' . $eol;
-
+        echo "Ejecuta  clase mail E";
 		if (empty($this->option['reply_to'])) {
 			$header .= 'Reply-To: =?UTF-8?B?' . base64_encode($this->option['sender']) . '?= <' . $this->option['from'] . '>' . $eol;
 		} else {
@@ -55,6 +55,7 @@ class Mail {
 
 		$message = '--' . $boundary . $eol;
 
+        echo "Ejecuta  clase mail F";
 		if (empty($this->option['html'])) {
 			$message .= 'Content-Type: text/plain; charset="utf-8"' . $eol;
 			$message .= 'Content-Transfer-Encoding: base64' . $eol . $eol;
@@ -97,7 +98,7 @@ class Mail {
 				}
 			}
 		}
-
+        echo "Ejecuta  clase mail G";
 		$message .= '--' . $boundary . '--' . $eol;
 
 		ini_set('sendmail_from', $this->option['from']);
@@ -106,8 +107,9 @@ class Mail {
             echo "Ejecuta  clase mail A";
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header, $this->option['parameter']);
 		} else {
-			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
             echo "Ejecuta  clase mail B";
+			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
+
         }
 	}
 }
