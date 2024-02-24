@@ -142,9 +142,9 @@ class Contact extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
-            echo "Proceso A";
+
 			if ($this->config->get('config_mail_engine')) {
-                echo "Proceso B";
+
 				$mail_option = [
 					'parameter'     => $this->config->get('config_mail_parameter'),
 					'smtp_hostname' => $this->config->get('config_mail_smtp_hostname'),
@@ -154,7 +154,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 					'smtp_timeout'  => $this->config->get('config_mail_smtp_timeout')
 				];
 
-                echo $this->config->get('config_email');
+
 				$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'), $mail_option);
 				$mail->setTo($this->config->get('config_email'));
 				// Less spam and fix bug when using SMTP like sendgrid.
@@ -164,10 +164,10 @@ class Contact extends \Opencart\System\Engine\Controller {
 				$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
 				$mail->setText($this->request->post['enquiry']);
 				var_dump($mail->send());
-                echo "eNVIO CORREO B";
+
 			}
 
-			//$json['redirect'] = $this->url->link('information/contact.success', 'language=' . $this->config->get('config_language'), true);
+			$json['redirect'] = $this->url->link('information/contact.success', 'language=' . $this->config->get('config_language'), true);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
