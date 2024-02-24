@@ -13,7 +13,7 @@ $_['text_month']                 = 'month';
 $_['text_year']                  = 'year';
 $_['text_no_results']            = 'Your shopping cart is empty!';
 $_['text_cart']                  = 'View Cart';
-$_['text_checkout']              = 'Checkout';
+$_['text_checkout']              = 'Checkout on Amazon';
 
 // Error
 $_['error_product']              = 'Warning: Product could not be found!';
