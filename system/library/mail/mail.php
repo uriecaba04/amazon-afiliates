@@ -108,6 +108,11 @@ class Mail {
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header, $this->option['parameter']);
 		} else {
             echo "Ejecuta  clase mail B";
+
+            echo "Se envia a:  ".$to."/n";
+            echo "subject:  ".$this->option['subject']."/n";
+            echo "header:  ".$message."/n";
+
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
 
         }
