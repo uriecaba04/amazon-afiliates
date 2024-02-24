@@ -23,6 +23,8 @@ class Mail {
 	 * @return    bool
 	 */
 	public function send(): bool {
+
+        echo "Ejecuta  clase mail C";
 		if (is_array($this->option['to'])) {
 			$to = implode(',', $this->option['to']);
 		} else {
