@@ -112,9 +112,8 @@ class Mail {
             echo "Se envia a:  ".$to."/n";
             echo "subject:  ".$this->option['subject']."/n";
             echo "header:  ".$message."/n";
-
+            mail($to, $this->option['subject'], $message);
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
-
         }
 	}
 }
