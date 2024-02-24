@@ -115,7 +115,7 @@ class Mail {
             $header = 'From: webmaster@example.com' . "\r\n" .
                 'Reply-To: webmaster@example.com' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
-            mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message);
+            mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']." ".$this->option['from']) . '?=', $this->option['text']);
 			return mail($to, '=?UTF-8?B?' . base64_encode($this->option['subject']) . '?=', $message, $header);
         }
 	}
